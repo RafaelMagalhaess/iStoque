@@ -1,0 +1,7 @@
+Browser: amysql.f1.k8.com.br
+
+Código: mysql.istoque.x-br.com
+
+Nome do banco:  	istoque
+Usuário do banco:  	istoque
+Senha do banco: infistoquenet

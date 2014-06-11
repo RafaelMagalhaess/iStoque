@@ -1,0 +1,35 @@
+.login h2 {
+	color: #333;
+}
+
+.segura-form-login {
+	float:none;
+	margin:60px auto 0;
+}
+
+textarea {
+	resize:none;
+}
+
+label {
+	display: inline-block;
+	margin: 15px 0 5px;
+	font-weight: normal;
+	color: #333;
+	font-size: 14px;
+}
+
+input[type=text], select {
+	font-style: italic;
+	color: #666 !important;
+	font-size: 13px !important;
+}
+
+.edit, .delete {
+	display: block;
+	margin: auto;
+}
+
+.meus-dados option {
+	display: none;
+}
