@@ -20,11 +20,11 @@
               echo "<td>". $row->tipoAcesso ."</td>";
               echo "<td>". $row->tipoSetor ."</td>";
               if($this->session->userdata['logado']['acesso'] == 1){
-                echo "<td><a href='usuario/editar/". $row->id ."'><img class='edit' src='".base_url()."assets/img/edit.png'></a></td>";
-                echo "<td><a href='usuario/excluir/". $row->id ."'><img class='delete' src='".base_url()."assets/img/delete.png'></a></td>";
+                echo "<td><a href='usuario/editar/". $row->id ."'><img class='icon' src='".base_url()."assets/img/edit.png'></a></td>";
+                echo "<td><a href='usuario/excluir/". $row->id ."'><img class='icon' src='".base_url()."assets/img/delete.png'></a></td>";
               } else if(($this->session->userdata['logado']['setor'] == $row->setor) && ($row->acesso > 2) && $this->session->userdata['logado']['acesso'] > 3) {
-                echo "<td><a href='usuario/editar/". $row->id ."'><img class='edit' src='".base_url()."assets/img/edit.png'></a></td>";
-                echo "<td><a href='usuario/excluir/". $row->id ."'><img class='delete' src='".base_url()."assets/img/delete.png'></a></td>";
+                echo "<td><a href='usuario/editar/". $row->id ."'><img class='icon' src='".base_url()."assets/img/edit.png'></a></td>";
+                echo "<td><a href='usuario/excluir/". $row->id ."'><img class='icon' src='".base_url()."assets/img/delete.png'></a></td>";
               } else {
                 echo "<td></td>";
                 echo "<td></td>";

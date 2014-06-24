@@ -16,6 +16,9 @@ $("#cnpj").change(function(){
 	$("#cnpj-input").css("display","block");
 });
 
+$('select').on('change', function() {
+  var teste = this.value;
+});
 
 //VALIDA FORM USUARIO CADASTRO
 function validaMesmaSenha(){
@@ -24,6 +27,20 @@ function validaMesmaSenha(){
 
 	if(senha != senha2){
 		alert("Senhas não conferem!");
+		return false;
+	} else {
+		return true;
+	}
+}
+
+//VALIDA QUANTIDADE
+
+function validaQnt(){
+	
+	var qnt = $('select option:selected').attr("data-qnt");
+	var qnt_inserida = $('#quantidade').val();
+	if(qnt_inserida < 1 || qnt_inserida > qnt){
+		alert("Insira uma quantidade válida!");
 		return false;
 	} else {
 		return true;

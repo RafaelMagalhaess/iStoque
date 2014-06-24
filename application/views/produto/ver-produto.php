@@ -4,7 +4,7 @@
 		<a class="btn btn-success pull-left" href="<?echo base_url();?>produto/cadastrar">+ Cadastrar novo produto</a>
 		<br><br>
 
-        <h2>Lista de Produto <span style="font-size:14px;">m = metro / u = unidade / g = gramas</span></h2>
+        <h2>Lista de Produto</h2>
 
           <table class="table table-striped table-bordered">
             <tr>

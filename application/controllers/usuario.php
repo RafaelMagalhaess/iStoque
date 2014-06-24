@@ -12,11 +12,6 @@ class Usuario extends CI_Controller {
 
 	public function index()
 	{
-		// $this->load->helper('url');
-		// $this->load->view('includes/topo');
-		// $this->load->view('usuario/ver-usuario');
-		// $this->load->view('includes/rodape');
-
 		$this->load->library('table');
 		$this->load->helper('html');
 		$data['query'] = $this->usuario_model->listar();

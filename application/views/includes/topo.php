@@ -20,12 +20,27 @@
             </button>
         </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-left">
-            <li>
-                <a href="<?echo base_url();?>requisicao/cadastrar">Fazer Requisição</a>
-            </li>
-            <li>
-              <a href="<?echo base_url();?>requisicao">Requisições Pendentes <span class="badge">1</span></a>
+          <ul class="nav navbar-nav navbar-left">            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Requisição <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<?echo base_url();?>requisicao/cadastrar">Fazer Requisição</a></li>
+                  <li>
+                    <a href="<?echo base_url();?>requisicao">Requisições Pendentes <span class="badge">
+                    <?php
+                      $this->load->database();
+                      
+                      $result = mysql_query("SELECT COUNT(id) FROM requisicao WHERE ativo =  '1'");
+
+                      $count = mysql_fetch_array($result);
+
+                      echo $count[0];
+                    ?></span>
+                    </a>
+                  </li>
+                   <li><a href="<?echo base_url();?>requisicao/aprovadas">Requisições Aprovadas</a></li>
+                    <li><a href="<?echo base_url();?>requisicao/negadas">Requisições Negadas</a></li>
+                </ul>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nota Fiscal <b class="caret"></b></a>

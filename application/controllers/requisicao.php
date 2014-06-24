@@ -23,8 +23,6 @@ class Requisicao extends CI_Controller {
 
 	public function cadastrar()
 	{
-
-
 		$this->form_validation->set_rules('quantidade', 'Quantidade', 'trim|required|min_length[1]|xss_clean');
 
 		if($this->form_validation->run() == FALSE){
@@ -40,55 +38,43 @@ class Requisicao extends CI_Controller {
 		$this->load->view('includes/rodape');
 	}
 
-	// public function editar($id = null) {
-	//     if ($id == null) {
-	//       show_error('Nenhum id informado', 500);
-	//     }
-	//     else {
-	//       $data['view_name'] = 'usuario/editar-usuario';
-	//       $data['view_data'] = $this->usuario_model->get($id);
-	 
-	//  	  $this->load->view('includes/topo');
-	//       $this->load->view('page_view', $data);
-	//       $this->load->view('includes/rodape');
-	//     }
-	//   }
+	public function confirmar($id = null) {
+	    if ($id == null) {
+	      show_error('Nenhum id informado', 500);
+	    }
+	    else {
+	      $this->requisicao_model->confirmar($id);
+	      redirect('requisicao');
+	    }
+	  }
 
-	//   public function meus_dados($id = null) {
-	//     if ($id == null || $id != $this->session->userdata['logado']['id']) {
-	//       show_error('Nenhum id informado', 500);
-	//     }
-	//     else {
-	//       $data['view_name'] = 'usuario/meus-dados';
-	//       $data['view_data'] = $this->usuario_model->get($id);
-	 
-	//  	  $this->load->view('includes/topo');
-	//       $this->load->view('page_view', $data);
-	//       $this->load->view('includes/rodape');
-	//     }
-	//   }
+	public function negar($id = null) {
+	    if ($id == null) {
+	      show_error('Nenhum id informado', 500);
+	    }
+	    else {
+	      $this->requisicao_model->negar($id);
+	      redirect('requisicao');
+	    }
+	  }
 
-	//   public function update() {
+	 public function aprovadas(){
 
-	//   	$this->form_validation->set_rules('login', 'Login', 'trim|required|min_length[4]|is_unique[usuario.login]|xss_clean');
-	// 	$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[usuario.email]');
-	// 	$this->form_validation->set_rules('senha', 'Senha', 'trim|min_length[4]|max_length[32]');
-	// 	$this->form_validation->set_rules('senha2', 'Confirme a senha', 'trim|matches[senha]');
+		$this->load->library('table');
+		$this->load->helper('html');
+		$data['query'] = $this->requisicao_model->aprovadas();
+		$this->load->view('includes/topo');
+		$this->load->view('requisicao/ver-requisicao-aprovada',$data);
+		$this->load->view('includes/rodape');
+	}
 
+	public function negadas(){
 
-	// 	$this->usuario_model->update();
-	// 	redirect('/usuario');
-
-	//   }
-
-	// public function excluir($id = null) {
-	//     if ($id == null) {
-	//       show_error('Nenhum id informado', 500);
-	//     }
-	//     else {
-	//       $this->usuario_model->excluir($id);
-	//       redirect('usuario');
-	//     }
-	// }
-
+		$this->load->library('table');
+		$this->load->helper('html');
+		$data['query'] = $this->requisicao_model->negadas();
+		$this->load->view('includes/topo');
+		$this->load->view('requisicao/ver-requisicao-negada',$data);
+		$this->load->view('includes/rodape');
+	}
 }

@@ -25,7 +25,7 @@ input[type=text], select {
 	font-size: 13px !important;
 }
 
-.edit, .delete {
+.icon {
 	display: block;
 	margin: auto;
 }

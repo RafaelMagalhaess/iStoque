@@ -9,30 +9,18 @@ class Usuario_model extends CI_Model {
   public function listar(){
     $this->load->database();
 
-    //*
     $query = $this->db->select('usuario.*, acesso.tipoAcesso tipoAcesso, setor.tipoSetor tipoSetor')
     ->from('usuario')
     ->join('acesso', 'acesso.id = usuario.acesso', 'inner')
     ->join('setor', 'setor.id = usuario.setor', 'inner')
-    // ->where('usuario.login', 'rafael')
     ->get();
 
-    /*
-      SELECT u . * , a.tipoAcesso
-      FROM usuario AS u
-      INNER JOIN acesso AS a ON ( a.id = u.acesso ) 
-      LIMIT 0 , 30
-    */
-    //*
-
-    //$query = $this->db->get('usuario');
     return $query->result();
   }
 
   public function get($id = null) {
     $this->db->select()->from('usuario');
  
-    // where condition if id is present
     if ($id != null) {
       $this->db->where('id', $id);
     }
@@ -43,10 +31,10 @@ class Usuario_model extends CI_Model {
     $query = $this->db->get();
  
     if ($id != null) {
-      return $query->row_array(); // single row
+      return $query->row_array();
     }
     else {
-      return $query->result_array(); // array of result
+      return $query->result_array();
     }
   }
 
@@ -78,7 +66,7 @@ class Usuario_model extends CI_Model {
     }
 
     $this->db->where('id', $data['id']);
-    $this->db->update('usuario',$data); // update the record
+    $this->db->update('usuario',$data);
   }
 
   public function excluir($id) {
@@ -100,9 +88,6 @@ class Usuario_model extends CI_Model {
     else
       return false;
   }
-
-
-  
 }
 
 ?>

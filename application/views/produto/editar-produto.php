@@ -25,9 +25,9 @@
     <div class="col-md-4 form-group">
       <label for="tipo">Tipo:</label>
       <select name="tipo" id="tipo" class="form-control">
-        <option value="m">Metro</option>
-        <option value="u">Unidade</option>
-        <option value="g">Peso (g)</option>
+        <option value="metros">Metro</option>
+        <option value="unidades">Unidade</option>
+        <option value="gramas">Peso (g)</option>
       </select>
     </div>
   </div>

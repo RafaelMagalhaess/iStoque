@@ -1,12 +1,24 @@
 <div class="col-md-7 segura-form-login">
 		<h2>Fazer nova requisição</h2>
 		<hr>
-		 <?php echo form_open("requisicao/cadastrar"); ?>
+		 <?php
+          $js = array('onsubmit' => 'return validaQnt()');
+      
+          echo form_open("requisicao/cadastrar", $js);
+    ?>
   			<div class="col-md-9">
           <div class="form-group">
             <label for="produto">Produto*</label>
       			<select name="produto" id="produto" class="form-control">
-              <option value="1">Toddynho</option>   
+             <?php
+              $query = $this->db->query("SELECT * FROM produto");
+              if ($query->num_rows() > 0){
+                $i = 1;
+                foreach ($query->result() as $row) { ?>
+
+            <option value="<?=$row->id;?>" data-qnt="<?=$row->quantidade;?>"><?=$row->nome. " (".$row->quantidade." ".$row->tipo.")";?></option>
+
+            <?php $i++; } } ?>
             </select>
     			</div>
         </div>
@@ -14,7 +26,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="quantidade">Quantidade*</label>
-            <input type="text" required class="form-control" id="quantidade" name="quantidade" maxlength="10">
+            <input type="number" required class="form-control" id="quantidade" name="quantidade" maxlength="10">
           </div>
         </div>
 
