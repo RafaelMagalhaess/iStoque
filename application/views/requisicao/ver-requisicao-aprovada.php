@@ -9,7 +9,6 @@
               <td>Usuário</td>
               <td>Setor</td>
               <td>Data da Requisição</td>
-              <td>Observação</td>
             </tr>
            <?php 
 
@@ -21,7 +20,6 @@
               echo "<td>". $row->usuario ."</td>";
               echo "<td>". $row->setor ."</td>";
               echo "<td>". $row->data ."</td>";
-              echo "<td>". $row->obs ."</td>";
               echo "</tr>"; 
             }
 

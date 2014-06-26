@@ -57,9 +57,7 @@ class Requisicao_model extends CI_Model {
       'quantidade'=>$qnt,
       'id_usuario'=>$this->session->userdata['logado']['id'],
       'id_setor'=>$this->session->userdata['logado']['setor'],
-      'id_setor'=>$this->session->userdata['logado']['setor'],
-      'data'=>mdate($datestring, $time),
-      'obs'=>$this->input->post('obs')
+      'data'=>mdate($datestring, $time)
     );
 
     $this->db->insert('requisicao',$data);

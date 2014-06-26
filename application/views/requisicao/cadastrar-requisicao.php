@@ -11,7 +11,7 @@
             <label for="produto">Produto*</label>
       			<select name="produto" id="produto" class="form-control">
              <?php
-              $query = $this->db->query("SELECT * FROM produto WHERE quantidade > 0");
+              $query = $this->db->query("SELECT * FROM produto");
               if ($query->num_rows() > 0){
                 $i = 1;
                 foreach ($query->result() as $row) { ?>
@@ -27,13 +27,6 @@
           <div class="form-group">
             <label for="quantidade">Quantidade*</label>
             <input type="number" required class="form-control" id="quantidade" name="quantidade" maxlength="10">
-          </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="col-md-12">
-          <div class="form-group">
-            <label for="obs">Observação*</label>
-            <textarea required class="form-control" id="obs" name="obs" maxlength="200"></textarea>
           </div>
         </div>
 

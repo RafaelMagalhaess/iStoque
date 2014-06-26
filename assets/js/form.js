@@ -2,15 +2,13 @@ $(document).ready(function(){
 	$("#cpf-input").mask("000.000.000-00");
 	$("#cnpj-input").mask("00.000.000/0000-00");
 	$("#cep").mask("00.000-000");
-	$("#ie").mask("0000000000000000000");
-	$("#im").mask("0000000000000000000");
+	$("#estadual").mask("0000000000000000000");
+	$("#municipal").mask("0000000000000000000");
 });
 
 $("#cpf").change(function(){
 	$("#cnpj-input").css("display","none");
 	$("#cpf-input").css("display","block");
-	$("#cpf-input").attr("name","cpf_cnpj");
-	$("#cnpj-input").removeAttr("name");
 });
 
 $("#cnpj").change(function(){
@@ -39,8 +37,8 @@ function validaMesmaSenha(){
 
 function validaQnt(){
 	
-	var qnt = parseInt($('select option:selected').attr("data-qnt"));
-	var qnt_inserida = parseInt($('#quantidade').val());
+	var qnt = $('select option:selected').attr("data-qnt");
+	var qnt_inserida = $('#quantidade').val();
 	if(qnt_inserida < 1 || qnt_inserida > qnt){
 		alert("Insira uma quantidade válida!");
 		return false;
