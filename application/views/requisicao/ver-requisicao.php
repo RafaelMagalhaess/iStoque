@@ -9,6 +9,7 @@
               <td>Usuário</td>
               <td>Setor</td>
               <td>Data da Requisição</td>
+              <td>Observação</td>
               <td>Autorizar</td>
               <td>Negar</td>
             </tr>
@@ -22,6 +23,7 @@
               echo "<td>". $row->usuario ."</td>";
               echo "<td>". $row->setor ."</td>";
               echo "<td>". $row->data ."</td>";
+              echo "<td>". $row->obs ."</td>";
               echo "<td><a href='requisicao/confirmar/". $row->id ."'><img class='icon' src='".base_url()."assets/img/confirm.png'></a></td>";
               echo "<td><a href='requisicao/negar/". $row->id ."'><img class='icon' src='".base_url()."assets/img/delete.png'></a></td>";
               echo "</tr>"; 
