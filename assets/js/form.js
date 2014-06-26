@@ -11,11 +11,17 @@ $("#cpf").change(function(){
 	$("#cpf-input").css("display","block");
 	$("#cpf-input").attr("name","cpf_cnpj");
 	$("#cnpj-input").removeAttr("name");
+	$("#cpf-input").prop("required", true);
+	$("#cnpj-input").removeAttr("required");
 });
 
 $("#cnpj").change(function(){
 	$("#cpf-input").css("display","none");
 	$("#cnpj-input").css("display","block");
+	$("#cnpj-input").attr("name","cpf_cnpj");
+	$("#cpf-input").removeAttr("name");
+	$("#cnpj-input").prop("required", true);
+	$("#cpf-input").removeAttr("required");
 });
 
 $('select').on('change', function() {
