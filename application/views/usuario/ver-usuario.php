@@ -1,4 +1,8 @@
 <div class="col-md-12 form-group">
+
+    <br>
+    <a class="btn btn-success pull-left" href="<?echo base_url();?>usuario/cadastrar">Cadastrar novo usuário</a>
+    <br><br>
         
         <h2>Lista de Usuários</h2>
 

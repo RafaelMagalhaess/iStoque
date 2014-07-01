@@ -47,7 +47,9 @@ class Fornecedor_model extends CI_Model {
       'bairro'=>$this->input->post('bairro'),
       'municipio'=>$this->input->post('municipio'),
       'uf'=>$this->input->post('uf'),
+      'email'=>$this->input->post('email'),
       'telefone'=>$this->input->post('telefone'),
+      'contato'=>$this->input->post('contato'),
       'ie'=>$this->input->post('ie'),
       'im'=>$this->input->post('im')
     );
@@ -67,7 +69,9 @@ class Fornecedor_model extends CI_Model {
       'bairro'=>$this->input->post('bairro'),
       'municipio'=>$this->input->post('municipio'),
       'uf'=>$this->input->post('uf'),
+      'email'=>$this->input->post('email'),
       'telefone'=>$this->input->post('telefone'),
+      'contato'=>$this->input->post('contato'),
       'ie'=>$this->input->post('ie'),
       'im'=>$this->input->post('im')
     );

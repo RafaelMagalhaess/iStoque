@@ -42,38 +42,10 @@
                     <li><a href="<?echo base_url();?>requisicao/negadas">Requisições Negadas</a></li>
                 </ul>
             </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nota Fiscal <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<?echo base_url();?>notafiscal/cadastrar">+ Nova Nota Fiscal</a></li>
-                  <li class="divider"></li>
-                  <li><a href="<?echo base_url();?>notafiscal">Ver Notas Fiscais</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Produto <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<?echo base_url();?>produto">Ver Produtos</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fornecedor <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<?echo base_url();?>fornecedor/cadastrar">+ Novo Fornecedor</a></li>
-                  <li class="divider"></li>
-                  <li><a href="<?echo base_url();?>fornecedor">Ver Fornecedores</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuário <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<?echo base_url();?>usuario/cadastrar">+ Novo Usuário</a></li>
-                  <li class="divider"></li>
-                  <li><a href="<?echo base_url();?>usuario">Ver Usuários</a></li>
-                  <li><a href="<?echo base_url();?>usuario/meus_dados/<?=$this->session->userdata['logado']['id']?>">Meus Dados</a></li>
-                  <li><a href="<?echo base_url();?>home/logout">Sair</a></li>
-                </ul>
-            </li>
+            <li><a href="<?echo base_url();?>nota-fiscal">Nota Fiscal</a></li>
+            <li><a href="<?echo base_url();?>produto">Produto</a></li>
+            <li><a href="<?echo base_url();?>fornecedor">Fornecedor</a></li>
+            <li><a href="<?echo base_url();?>usuario">Usuário</a></li>
           </ul>
           </div>
       </nav><br><br><br>

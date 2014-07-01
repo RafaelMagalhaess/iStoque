@@ -11,8 +11,8 @@
 			
       <div class="col-md-8">
 			 <div class="form-group">
-    			<label for="fantasia">Nome Fantasia*</label>
-          <input type="text" required class="form-control" id="fantasia" name="fantasia">
+    			<label for="fantasia">Nome Fantasia</label>
+          <input type="text" class="form-control" id="fantasia" name="fantasia">
   			</div>
       </div>
 
@@ -96,26 +96,46 @@
         </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="clearfix"></div>
+
+        <div class="col-md-3">
          <div class="form-group">
-          <label for="telefone">Telefone* </label>
+          <label for="email">Email*</label>
+          <input type="email" required class="form-control" id="email" name="email">
+        </div>
+        </div>
+
+        <div class="col-md-3">
+         <div class="form-group">
+          <label for="telefone">Telefone*</label>
           <input type="text" required class="form-control" id="telefone" name="telefone">
         </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
          <div class="form-group">
           <label for="ie">Inscrição Estadual*</label>
           <input type="text" required class="form-control" id="ie" name="ie">
         </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
          <div class="form-group">
           <label for="im">Inscrição Municipal*</label>
           <input type="text" required class="form-control" id="im" name="im">
         </div>
         </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-12">
+         <div class="form-group">
+          <label for="contato">Contato</label>
+          <textarea class="form-control" id="contato" name="contato" placeholder="Ex: João - (21)99999-9999 \ Maria - (21)88888-8888" maxlength="300"></textarea>
+        </div>
+        </div>
+
+        <div class="clearfix"></div>
 
         <div class="col-md-12">
           <div class="form-group">

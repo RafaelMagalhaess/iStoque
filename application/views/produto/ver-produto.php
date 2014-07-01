@@ -1,10 +1,10 @@
 <div class="col-md-12 form-group">
         
-        <br>
-		<a class="btn btn-success pull-left" href="<?echo base_url();?>produto/cadastrar">+ Cadastrar novo produto</a>
+    <br>
+		<a class="btn btn-success pull-left" href="<?echo base_url();?>produto/cadastrar">Cadastrar novo produto</a>
 		<br><br>
 
-        <h2>Lista de Produto</h2>
+        <h2>Lista de Produtos</h2>
 
           <table class="table table-striped table-bordered">
             <tr>
