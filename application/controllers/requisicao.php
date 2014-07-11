@@ -23,7 +23,7 @@ class Requisicao extends CI_Controller {
 
 	public function cadastrar()
 	{
-		$this->form_validation->set_rules('quantidade', 'Quantidade', 'trim|required|min_length[1]|xss_clean');
+		$this->form_validation->set_rules('quantidade', 'Quantidade', 'required');
 
 		if($this->form_validation->run() == FALSE){
 			//$this->index();

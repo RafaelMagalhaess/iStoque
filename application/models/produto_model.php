@@ -54,7 +54,6 @@ class Produto_model extends CI_Model {
       'nome'=>$this->input->post('nome'),
       'marca'=>$this->input->post('marca'),
       'quantidade'=>$this->input->post('quantidade'),
-      'tipo'=>$this->input->post('tipo'),
       'descricao'=>$this->input->post('descricao')
     );
 

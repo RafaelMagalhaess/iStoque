@@ -2,7 +2,32 @@
 
     <br>
     <a class="btn btn-success pull-left" href="<?echo base_url();?>fornecedor/cadastrar">Cadastrar novo fornecedor</a>
-    <br><br>
+    <div class="clearfix"></div>
+    <br>
+
+    <hr>
+
+    <form>
+      <div class="form-group col-md-9">
+        <h3>Buscar:</h3><div class="clearfix"></div>
+        <div class="col-md-3" style="padding-left:0;">
+          <select class="form-control">
+            <option value="razao">Razão Social</option>
+            <option value="fantasia">Nome Fantasia</option>
+            <option value="cpf_cnpj">CPF/CNPJ</option>
+            <option value="telefone">Telefone</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="buscar" placeholder="Fazer Busca">
+        </div>
+      </div> 
+    </form>
+
+    <div class="clearfix"></div>
+    <hr>
+    <br>
+    <br>
         
         <h2>Lista de Fornecedores</h2>
 
@@ -10,6 +35,7 @@
             <tr>
               <td>Razão Social</td>
               <td>Nome Fantasia</td>
+              <td>CPF/CNPJ</td>
               <td>Telefone da Empresa</td>
               <td>Editar</td>
               <td>Excluir</td>
@@ -18,15 +44,16 @@
 
             foreach($query as $row){
               echo "<tr>";
-              echo "<td><a href='javascript:;' data-toggle='modal' data-target='#myModal$row->id'>". $row->razao ."</a></td>";
-              echo "<td>". $row->fantasia ."</td>";
-              echo "<td>". $row->telefone ."</td>";
+              echo "<td class='razao'><a href='javascript:;' data-toggle='modal' data-target='#myModal$row->id'>". $row->razao ."</a></td>";
+              echo "<td class='fantasia'>". $row->fantasia ."</td>";
+              echo "<td class='cpf_cnpj'>". $row->cpf_cnpj ."</td>";
+              echo "<td class='telefone'>". $row->telefone ."</td>";
               echo "<td><a href='/fornecedor/editar/". $row->id ."'><img class='icon' src='".base_url()."assets/img/edit.png'></a></td>";
               echo "<td><a href='/fornecedor/excluir/". $row->id ."'><img class='icon' src='".base_url()."assets/img/delete.png'></a></td>";
               echo "</tr>";
             ?>
 
-            <div class="modal fade" id="myModal<?=$row->id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModal<?=$row->id;?>" data-backdrop="true" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -62,4 +89,20 @@
           </table>
         </div>
 
+<script type="text/javascript">
 
+var atributo = ".razao"
+$('select').on('change', function() {
+  atributo = '.'+this.value;
+
+ $('.table-bordered').liveFilter('#buscar', 'tr', {
+    filterChildSelector: atributo
+  });
+
+});
+  
+$('.table-bordered').liveFilter('#buscar', 'tr', {
+    filterChildSelector: atributo
+});
+
+</script>

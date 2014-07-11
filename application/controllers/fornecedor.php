@@ -24,7 +24,6 @@ class Fornecedor extends CI_Controller {
 	{
 
 		$this->form_validation->set_rules('razao', 'Razão Social', 'trim|required|min_length[4]|is_unique[fornecedor.razao]|xss_clean');
-		$this->form_validation->set_rules('fantasia', 'Nome Fantasia', 'trim|min_length[4]');
 		$this->form_validation->set_rules('cpf_cnpj', 'CPF/CNPJ', 'trim|required|min_length[11]|is_unique[fornecedor.cpf_cnpj]');
 		$this->form_validation->set_rules('endereco', 'Endereço', 'trim|required|min_length[4]');
 		$this->form_validation->set_rules('cep', 'CEP', 'trim|required|min_length[8]');
@@ -33,7 +32,7 @@ class Fornecedor extends CI_Controller {
 		$this->form_validation->set_rules('uf', 'UF', 'trim|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[fornecedor.email]');
 		$this->form_validation->set_rules('telefone', 'Telefone', 'trim|required|min_length[8]');
-		$this->form_validation->set_rules('contato', 'Contato', 'trim|required|min_length[8]');
+		$this->form_validation->set_rules('contato', 'Contato', 'trim|min_length[8]');
 		$this->form_validation->set_rules('ie', 'Inscrição Estadual', 'trim|required|min_length[4]');
 		$this->form_validation->set_rules('im', 'Inscrição Municipal', 'trim|required|min_length[4]');
 

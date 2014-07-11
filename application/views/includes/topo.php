@@ -7,6 +7,12 @@
 	<title>Sistema de Controle de Estoque</title>
 	<link rel="stylesheet" href="<?echo base_url();?>assets/css/bootstrap.css">
 	<link rel="stylesheet" href="<?echo base_url();?>assets/css/main.css">
+
+  <script type="text/javascript" src="<?echo base_url();?>assets/js/jquery.js"></script>
+  <script type="text/javascript" src="<?echo base_url();?>assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="<?echo base_url();?>assets/js/mask.js"></script>
+  <script type="text/javascript" src="<?echo base_url();?>assets/js/form.js"></script>
+  <script type="text/javascript" src="<?echo base_url();?>assets/js/jquery.liveFilter.js"></script>
 </head>
 <body>
   <?php if($this->session->userdata('logado')) { ?>

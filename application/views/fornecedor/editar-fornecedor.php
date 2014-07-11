@@ -13,7 +13,7 @@
       <div class="col-md-8">
        <div class="form-group">
           <label for="fantasia">Nome Fantasia*</label>
-          <input type="text" readonly required class="form-control" id="fantasia" name="fantasia" value="<?=$view_data['fantasia'];?>">
+          <input type="text" class="form-control" id="fantasia" name="fantasia" value="<?=$view_data['fantasia'];?>">
         </div>
       </div>
 

@@ -45,28 +45,48 @@ class Requisicao_model extends CI_Model {
 
   public function cadastrar(){
 
-    date_default_timezone_set('Brazil/East');
-    $datestring = "%d/%m/%Y %H:%i";
-    $time = time();
+    $fields = array('id_prod', 'quantidade', 'obs', 'id_usuario', 'id_setor', 'data');
 
-    $id_prod = $this->input->post('produto');
-    $qnt = $this->input->post('quantidade');
+    foreach ($fields as $field)
+    {
+        foreach ($_POST[$field] as $key => $value)
+        {
+            $data[$key][$field] = $value;
+        }
+    }
 
-    $data = array(
-      'id_prod'=>$id_prod,
-      'quantidade'=>$qnt,
-      'id_usuario'=>$this->session->userdata['logado']['id'],
-      'id_setor'=>$this->session->userdata['logado']['setor'],
-      'id_setor'=>$this->session->userdata['logado']['setor'],
-      'data'=>mdate($datestring, $time),
-      'obs'=>$this->input->post('obs')
-    );
+    $i = 0;
+    foreach ($data as $values)
+    {
+        $this->db->insert('requisicao', $values);
 
-    $this->db->insert('requisicao',$data);
+        $id_prod = $data[$i]['id_prod'];
+        $qnt = $data[$i]['quantidade'];
+
+        $this->db->set('quantidade', 'quantidade-'.$qnt, FALSE);
+        $this->db->where('id', $id_prod);
+        $this->db->update('produto');
+
+        $i++;
+
+    }
     
-    $this->db->set('quantidade', 'quantidade-'.$qnt, FALSE);
-    $this->db->where('id', $id_prod);
-    $this->db->update('produto');
+    // $id_prod = $this->input->post('produto');
+    // $qnt = $this->input->post('quantidade');
+
+    // $data = array(
+    //   'id_prod'=>$id_prod,
+    //   'quantidade'=>$qnt,
+    //   'id_usuario'=>$this->session->userdata['logado']['id'],
+    //   'id_setor'=>$this->session->userdata['logado']['setor'],
+    //   'id_setor'=>$this->session->userdata['logado']['setor'],
+    //   'data'=>mdate($datestring, $time),
+    //   'obs'=>$this->input->post('obs')
+    // );
+
+    // $this->db->insert('requisicao',$data);
+    
+    
 
   }
 

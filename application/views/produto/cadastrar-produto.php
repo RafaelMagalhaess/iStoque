@@ -2,7 +2,7 @@
     <h2>Cadastro de Produto</h2>
     <hr>
     <?php echo form_open("produto/cadastrar"); ?>
-     <div class="col-md-6">
+     <div class="col-md-5">
 
       <div class="col-md-12 form-group">
        <label for="nome">Nome do Produto*</label>
@@ -11,7 +11,7 @@
 
    </div>
 
-   <div class="col-md-6">
+   <div class="col-md-7">
     <div class="col-md-4 form-group">
       <label for="marca">Marca:</label>
       <input type="text" name="marca" id="marca" class="form-control" maxlength="20">
